@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./shop.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <title>Document</title>
+
+  <style>
+    /* 네비게이션 바 배경색, 폰트, 여백 등 스타일 지정 */
+    .navbar {
+      background-color: #E1F6FA; /* 배경색 */
+      font-family: 'Arial', sans-serif; /* 폰트 */
+      padding: 10px 0; /* 위아래 여백 */
+    }
+  
+    .navbar-brand {
+      font-weight: bold; /* 로고 텍스트 굵게 */
+      color: #007bff; /* 로고 텍스트 색상 */
+      font-size: 1.5rem; /* 로고 텍스트 사이즈 */
+    }
+
+    
+    .navbar-nav .nav-item {
+      border-bottom: 1px solid #ddd; /* 목록 항목들의 하단에 선 추가 */
+      padding: 10px 20px; /* 각 목록 항목의 상하 여백 및 좌우 여백 설정 */
+    }
+
+    .navbar-nav .nav-link {
+      color: #333; /* 메뉴 항목 텍스트 색상 */
+      font-weight: bold; /* 메뉴 항목 텍스트 굵게 */
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-light navbar-expand-md">
+    <a class="navbar-brand ms-5" href="http://127.0.0.1:8000/advertisement/"><Strong>AdTarget</Strong></a>
+    <div class="d-flex flex-row-reverse collapse navbar-collapse" id="navbar1">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="http://127.0.0.1:8000/advertisement/service/">서비스 소개</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://127.0.0.1:8000/advertisement/data/">기반 데이터 소개</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="http://127.0.0.1:8000/advertisement/service1">고객별 맞춤형 광고 알고리즘</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://127.0.0.1:8000/advertisement/service2">서비스별 타겟 고객 및 광고 송출 서비스</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <header>
+    <div class="text-center w-100">
+        <h1><Strong style="font-size: 2rem;">고객별 맞춤형 광고 알고리즘</Strong></h1>
+    </div>
+  </header>
+
+  <section class="d-flex flex-wrap justify-content-around mt-2">
+    <h1>Service Recommendation</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="자치구">자치구:</label><br>
+        <select name='region'>
+            <option value='' selected>-- 선택 --</option>
+            <option value='강남구'>강남구</option>
+            <option value='강동구'>강동구</option>
+            <option value='강북구'>강북구</option>
+            <option value='강서구'>강서구</option>
+            <option value='관악구'>관악구</option>
+            <option value='광진구'>광진구</option>
+            <option value='구로구'>구로구</option>
+            <option value='금천구'>금천구</option>
+            <option value='노원구'>노원구</option>
+            <option value='도봉구'>도봉구</option>
+            <option value='동대문구'>동대문구</option>
+            <option value='동작구'>동작구</option>
+            <option value='마포구'>마포구</option>
+            <option value='서대문구'>서대문구</option>
+            <option value='서초구'>서초구</option>
+            <option value='성동구'>성동구</option>
+            <option value='성북구'>성북구</option>
+            <option value='송파구'>송파구</option>
+            <option value='양천구'>양천구</option>
+            <option value='영등포구'>영등포구</option>
+            <option value='용산구'>용산구</option>
+            <option value='은평구'>은평구</option>
+            <option value='종로구'>종로구</option>
+            <option value='중구'>중구</option>
+            <option value='중랑구'>중랑구</option>
+        </select>
+        <label for="성별">성별:</label><br>
+        <select>
+            <option value='M'>남성</option>
+            <option value='F'>여성</option>
+        </select>
+        <label for="연령대">연령대:</label><br>
+        <select>
+            <option value=20>20대</option>
+            <option value=30>30대</option>
+            <option value=40>40대</option>
+            <option value=50>50대</option>
+            <option value=60>60대</option>
+            <option value=70>70대</option>
+        </select>
+        <input type="submit" value="Submit">
+    </form> 
+    <hr>
+    <h2>Recommended Services</h2>
+    <ul>
+        {% for service, value in services_values %}
+        <li>{{ service }}: {{ value }}</li>
+        {% endfor %}
+    </ul>
+    <img src="data:image/png;base64,{{ data }}"/>
+  </section>
+
+  <footer class="text-center mt-4">
+    <h1 style="font-size: 15px; color: gray;">데이터 분석&엔지니어 취업캠프(Python) 30회차</h1>
+    <h2 style="font-size: 15px; color: gray;">문제해결 빅데이터 활용 프로젝트</h2>
+    <h3 style="font-size: 15px; color: gray;">상부3조(최현민, 정혜원, 김수연, 김현, 최수정)</h3>
+
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
