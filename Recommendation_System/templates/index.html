@@ -17,7 +17,16 @@
       font-family: 'Arial', sans-serif; /* 폰트 */
       padding: 10px 0; /* 위아래 여백 */
     }
-  
+
+    .nav-item{
+      margin-right: 20px;
+    }
+    
+    .nav-item.active .nav-link {
+      color: #007bff;
+      font-weight: bold;
+    }
+
     .navbar-brand {
       font-weight: bold; /* 로고 텍스트 굵게 */
       color: #007bff; /* 로고 텍스트 색상 */
@@ -34,32 +43,82 @@
       color: #333; /* 메뉴 항목 텍스트 색상 */
       font-weight: bold; /* 메뉴 항목 텍스트 굵게 */
     }
+
+    /* 폼 요소들의 간격 조정 */
+    form {
+      margin-bottom: 20px;
+    }
+
+    /* 선택 박스 스타일 변경 */
+    select {
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    /* 제출 버튼 디자인 변경 */
+    input[type="submit"] {
+      padding: 8px 15px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    /* 결과 테이블 */
+    table {
+      margin-left:auto; 
+      margin-right:auto;
+    }
+  
+    table, td, th {
+      border-collapse : collapse;
+      border : 1px solid black;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    main {
+      flex: 1;
+    }
+
+  
   </style>
 </head>
 
 <body>
   <nav class="navbar navbar-light navbar-expand-md">
+    <div class="container-fluid">
     <a class="navbar-brand ms-5" href="http://127.0.0.1:8000/advertisement/"><Strong>AdTarget</Strong></a>
-    <div class="d-flex flex-row-reverse collapse navbar-collapse" id="navbar1">
-      <ul class="navbar-nav mr-auto">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar1" aria-controls="navbar1" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbar1">
+      <ul class="navbar-nav ms-auto">
         <li class="nav-item">
           <a class="nav-link" href="http://127.0.0.1:8000/advertisement/service/">서비스 소개</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="http://127.0.0.1:8000/advertisement/data/">기반 데이터 소개</a>
         </li>
-        <li class="nav-item active">
+        <li class="nav-item">
           <a class="nav-link" href="http://127.0.0.1:8000/advertisement/service1">고객별 맞춤형 광고 알고리즘</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="http://127.0.0.1:8000/advertisement/service2">서비스별 타겟 고객 및 광고 송출 서비스</a>
+          <a class="nav-link" href="http://127.0.0.1:8000/advertisement/service2">서비스별 타겟 고객 및 광고 송출 서비스 추천</a>
         </li>
       </ul>
+    </div>
     </div>
   </nav>
 
   <header>
-    <img src="https://t4.ftcdn.net/jpg/03/21/09/07/240_F_321090768_4rGy0wYi3lB98iTMELBEtOn8AqbbTJrO.jpg" alt="main image" width = "100%">
+    <img src="https://png.pngtree.com/background/20210715/original/pngtree-bright-and-simple-light-blue-banner-background-picture-image_1303887.jpg" alt="main image" width = "100%" height="200">
   </header>
 
   <section class="d-flex flex-wrap justify-content-around mt-2">

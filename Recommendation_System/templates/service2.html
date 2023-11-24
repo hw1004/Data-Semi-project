@@ -17,7 +17,16 @@
       font-family: 'Arial', sans-serif; /* 폰트 */
       padding: 10px 0; /* 위아래 여백 */
     }
-  
+
+    .nav-item{
+      margin-right: 20px;
+    }
+    
+    .nav-item.active .nav-link {
+      color: #007bff;
+      font-weight: bold;
+    }
+
     .navbar-brand {
       font-weight: bold; /* 로고 텍스트 굵게 */
       color: #007bff; /* 로고 텍스트 색상 */
@@ -34,42 +43,95 @@
       color: #333; /* 메뉴 항목 텍스트 색상 */
       font-weight: bold; /* 메뉴 항목 텍스트 굵게 */
     }
+
+    /* 폼 요소들의 간격 조정 */
+    form {
+      margin-bottom: 20px;
+    }
+
+    /* 선택 박스 스타일 변경 */
+    select {
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    /* 제출 버튼 디자인 변경 */
+    input[type="submit"] {
+      padding: 8px 15px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    /* 결과 테이블 */
+    table {
+      margin-left:auto; 
+      margin-right:auto;
+    }
+  
+    table, td, th {
+      border-collapse : collapse;
+      border : 1px solid black;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    main {
+      flex: 1;
+    }
+
+  
   </style>
 </head>
 
 <body>
   <nav class="navbar navbar-light navbar-expand-md">
+    <div class="container-fluid">
     <a class="navbar-brand ms-5" href="http://127.0.0.1:8000/advertisement/"><Strong>AdTarget</Strong></a>
-    <div class="d-flex flex-row-reverse collapse navbar-collapse" id="navbar1">
-      <ul class="navbar-nav mr-auto">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar1" aria-controls="navbar1" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbar1">
+      <ul class="navbar-nav ms-auto">
         <li class="nav-item">
           <a class="nav-link" href="http://127.0.0.1:8000/advertisement/service/">서비스 소개</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="http://127.0.0.1:8000/advertisement/data/">기반 데이터 소개</a>
         </li>
-        <li class="nav-item active">
+        <li class="nav-item">
           <a class="nav-link" href="http://127.0.0.1:8000/advertisement/service1">고객별 맞춤형 광고 알고리즘</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="http://127.0.0.1:8000/advertisement/service2">서비스별 타겟 고객 및 광고 송출 서비스</a>
+        <li class="nav-item active">
+          <a class="nav-link" href="http://127.0.0.1:8000/advertisement/service2">서비스별 타겟 고객 및 광고 송출 서비스 추천</a>
         </li>
       </ul>
+    </div>
     </div>
   </nav>
 
   <header>
-    <div class="text-center w-100">
-      <h1><Strong style="font-size: 2rem;">서비스별 타겟 고객 및 광고 송출 서비스</Strong></h1>
+    <div style="background-color: #CEECF5;" class="text-center w-100 p-2">
+      <h1><Strong style="font-size: 1.5rem;">서비스별 타겟 고객 및 광고 송출 서비스</Strong></h1>
     </div>
   </header>
 
-  <section class="d-flex flex-wrap justify-content-around mt-2">
-    <h1>Service Recommendation</h1>
-    <form method="post">
+  <section class="d-flex flex-column justify-content-center align-items-center mt-3">
+    <h2 class="text-center mb-3">Service Recommendation</h2>
+    <form method="post" class="mt-4 p-4 border rounded">
       {% csrf_token %}
-      <label for="서비스">서비스:</label><br>
-      <select name='서비스'>
+      <div class="row mb-3">
+      <div class="row mb-3">
+      <label for="서비스" class="col-xs-2 col-form-label text-center mb-3">서비스의 종류를 선택해주세요.</label><br>
+      <div class="select-container">
+      <select name='서비스' class="form-select">
           <option value='배달 서비스'>배달 서비스</option>
           <option value='금융 서비스'>금융 서비스</option>
           <option value='게임 서비스'>게임 서비스</option>
@@ -78,7 +140,12 @@
           <option value='유튜브'>유튜브</option>
           <option value='동영상/방송 서비스'>동영상/방송 서비스</option>
       </select>
-      <input type="submit" value="Submit">
+    </div>
+  </div>
+    <div class="text-center mb-3">
+      <input type="submit" value="Submit" class="btn btn-primary">
+    </div>
+    </div>
     </form> 
     <hr>
     <h2>Recommended Services</h2>
