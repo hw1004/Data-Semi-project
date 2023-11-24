@@ -59,37 +59,42 @@
   </nav>
 
   <header>
-    <img src="https://t4.ftcdn.net/jpg/03/21/09/07/240_F_321090768_4rGy0wYi3lB98iTMELBEtOn8AqbbTJrO.jpg" alt="main image" width = "100%">
+    <div class="text-center w-100">
+      <h1><Strong style="font-size: 2rem;">서비스별 타겟 고객 및 광고 송출 서비스</Strong></h1>
+    </div>
   </header>
 
   <section class="d-flex flex-wrap justify-content-around mt-2">
-    <div class="text-center w-100">
-      <strong style='font-size: 2rem; color: #007bff;'>Our Services</strong>
-    </div>
+    <h1>Service Recommendation</h1>
+    <form method="post">
+      {% csrf_token %}
+      <label for="서비스">서비스:</label><br>
+      <select name='서비스'>
+          <option value='배달 서비스'>배달 서비스</option>
+          <option value='금융 서비스'>금융 서비스</option>
+          <option value='게임 서비스'>게임 서비스</option>
+          <option value='넷플릭스'>넷플릭스</option>
+          <option value='쇼핑 서비스'>쇼핑 서비스</option>
+          <option value='유튜브'>유튜브</option>
+          <option value='동영상/방송 서비스'>동영상/방송 서비스</option>
+      </select>
+      <input type="submit" value="Submit">
+    </form> 
+    <hr>
+    <h2>Recommended Services</h2>
 
-    <div class="container">
-      <div class="row row-cols-xs-1 row-cols-md-2 row-cols-4 justify-content-center">
-        <article class="card my-3 mx-5 p-3" style="width: 18rem;">
-          <img src="https://t4.ftcdn.net/jpg/06/29/80/75/240_F_629807512_hpi0NZqqsM5cUeiPrGBsxsqKl1absShp.jpg" class="card-img-top" alt="service1" height=170>
-          <div class="card-body">
-            <h5 class="card-title">고객별 맞춤형 광고 알고리즘</h5>
-            <h6 class="card-subtitle mb-2 text-body-secondary">고객의 자치구, 연령대, 성별에 따라 고객 개개인의 광고 알고리즘에 넣을 서비스를 추천하는 시스템입니다.</h6>
-            <a class="btn btn-primary" href="http://127.0.0.1:8000/advertisement/service1/" role="button">서비스 바로가기</a>
-          </div>
-        </article>
 
-        <article class="card my-3 mx-5 p-3" style="width: 18rem;">
-          <img src="https://t4.ftcdn.net/jpg/02/94/86/37/240_F_294863782_fEMkDvBOq1L66Ck83lLydsz8MMIympZI.jpg" class="card-img-top" alt="service2" height=170>
-          <div class="card-body">
-            <h5 class="card-title">서비스별 타겟 고객 및 광고 송출 서비스</h5>
-            <h6 class="card-subtitle mb-2 text-body-secondary">게임, 금융, 쇼핑, 동영상/방송, 유튜브, 넷플릭스, 배달 서비스 광고주분들을 위해 서비스의 이용수가 가장 많은 타겟 고객의 자치구, 연령대, 성별을 우선순위 순으로 정렬해드리며, 맞춤형 광고 송출 대상 서비스를 추천하는 시스템입니다. </h6>
-            <a class="btn btn-primary" href="http://127.0.0.1:8000/advertisement/service2/" role="button">서비스 바로가기</a>
-          </div>
-        </article>
+    <ul>
+        {% for target in targets %}
+        <li>
+          {{ target }}
+          {% for service in other_services %}
+          <li>{{ service }}</li>
+          {% endfor %}
+        </li>
+        {% endfor %}
+    </ul>
 
-      </div>
-
-    </div>
   </section>
 
   <footer class="text-center mt-4">

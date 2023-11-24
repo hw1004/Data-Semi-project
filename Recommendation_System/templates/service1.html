@@ -34,6 +34,15 @@
       color: #333; /* 메뉴 항목 텍스트 색상 */
       font-weight: bold; /* 메뉴 항목 텍스트 굵게 */
     }
+
+    table {
+      width: 200px;
+    }
+    td {
+      padding: 10px;
+      border: 1px solid #666666;
+    }
+  
   </style>
 </head>
 
@@ -67,60 +76,70 @@
   <section class="d-flex flex-wrap justify-content-around mt-2">
     <h1>Service Recommendation</h1>
     <form method="post">
-        {% csrf_token %}
-        <label for="자치구">자치구:</label><br>
-        <select name='region'>
-            <option value='' selected>-- 선택 --</option>
-            <option value='강남구'>강남구</option>
-            <option value='강동구'>강동구</option>
-            <option value='강북구'>강북구</option>
-            <option value='강서구'>강서구</option>
-            <option value='관악구'>관악구</option>
-            <option value='광진구'>광진구</option>
-            <option value='구로구'>구로구</option>
-            <option value='금천구'>금천구</option>
-            <option value='노원구'>노원구</option>
-            <option value='도봉구'>도봉구</option>
-            <option value='동대문구'>동대문구</option>
-            <option value='동작구'>동작구</option>
-            <option value='마포구'>마포구</option>
-            <option value='서대문구'>서대문구</option>
-            <option value='서초구'>서초구</option>
-            <option value='성동구'>성동구</option>
-            <option value='성북구'>성북구</option>
-            <option value='송파구'>송파구</option>
-            <option value='양천구'>양천구</option>
-            <option value='영등포구'>영등포구</option>
-            <option value='용산구'>용산구</option>
-            <option value='은평구'>은평구</option>
-            <option value='종로구'>종로구</option>
-            <option value='중구'>중구</option>
-            <option value='중랑구'>중랑구</option>
-        </select>
-        <label for="성별">성별:</label><br>
-        <select>
-            <option value='M'>남성</option>
-            <option value='F'>여성</option>
-        </select>
-        <label for="연령대">연령대:</label><br>
-        <select>
-            <option value=20>20대</option>
-            <option value=30>30대</option>
-            <option value=40>40대</option>
-            <option value=50>50대</option>
-            <option value=60>60대</option>
-            <option value=70>70대</option>
-        </select>
-        <input type="submit" value="Submit">
+      {% csrf_token %}
+      <label for="자치구">자치구:</label><br>
+      <select name='자치구'>
+          <option value='강남구'>강남구</option>
+          <option value='강동구'>강동구</option>
+          <option value='강북구'>강북구</option>
+          <option value='강서구'>강서구</option>
+          <option value='관악구'>관악구</option>
+          <option value='광진구'>광진구</option>
+          <option value='구로구'>구로구</option>
+          <option value='금천구'>금천구</option>
+          <option value='노원구'>노원구</option>
+          <option value='도봉구'>도봉구</option>
+          <option value='동대문구'>동대문구</option>
+          <option value='동작구'>동작구</option>
+          <option value='마포구'>마포구</option>
+          <option value='서대문구'>서대문구</option>
+          <option value='서초구'>서초구</option>
+          <option value='성동구'>성동구</option>
+          <option value='성북구'>성북구</option>
+          <option value='송파구'>송파구</option>
+          <option value='양천구'>양천구</option>
+          <option value='영등포구'>영등포구</option>
+          <option value='용산구'>용산구</option>
+          <option value='은평구'>은평구</option>
+          <option value='종로구'>종로구</option>
+          <option value='중구'>중구</option>
+          <option value='중랑구'>중랑구</option>
+      </select>
+      <label for="성별">성별:</label><br>
+      <select name="성별">
+          <option value='M'>남성</option>
+          <option value='F'>여성</option>
+      </select>
+      <label for="연령대">연령대:</label><br>
+      <select name="연령대">
+          <option value=20>20대</option>
+          <option value=30>30대</option>
+          <option value=40>40대</option>
+          <option value=50>50대</option>
+          <option value=60>60대</option>
+          <option value=70>70대</option>
+      </select>
+      <input type="submit" value="Submit">
     </form> 
     <hr>
     <h2>Recommended Services</h2>
-    <ul>
-        {% for service, value in services_values %}
-        <li>{{ service }}: {{ value }}</li>
-        {% endfor %}
-    </ul>
-    <img src="data:image/png;base64,{{ data }}"/>
+    <div class="text-center w-100">
+      <table class="table table-bordered border-primary" width = 100>
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">광고 알고리즘 우선순위</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for service in services %}
+          <tr>
+            <td>{{ service }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
   </section>
 
   <footer class="text-center mt-4">
