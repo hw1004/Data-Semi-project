@@ -13,11 +13,20 @@
   <style>
     /* 네비게이션 바 배경색, 폰트, 여백 등 스타일 지정 */
     .navbar {
-      background-color: #E1F6FA; /* 배경색 */
+      background-color: #FFFFFF; /* 배경색 */
       font-family: 'Arial', sans-serif; /* 폰트 */
       padding: 10px 0; /* 위아래 여백 */
     }
-  
+
+    .nav-item{
+      margin-right: 20px;
+    }
+    
+    .nav-item.active .nav-link {
+      color: #007bff;
+      font-weight: bold;
+    }
+
     .navbar-brand {
       font-weight: bold; /* 로고 텍스트 굵게 */
       color: #007bff; /* 로고 텍스트 색상 */
@@ -34,63 +43,186 @@
       color: #333; /* 메뉴 항목 텍스트 색상 */
       font-weight: bold; /* 메뉴 항목 텍스트 굵게 */
     }
+
+    /* 폼 요소들의 간격 조정 */
+    form {
+      margin-bottom: 20px;
+    }
+
+    /* 선택 박스 스타일 변경 */
+    select {
+      padding: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    div {
+      text-align: center /* 텍스트 가운데 정렬 */
+    }
+      
+
+    /* 제출 버튼 디자인 변경 */
+    input[type="submit"] {
+      padding: 8px 15px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    /* 결과 테이블 */
+    table {
+      margin-left:auto; 
+      margin-right:auto;
+    }
+  
+    table, td, th {
+      border-collapse : collapse;
+      border : 1px solid black;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    main {
+      flex: 1;
+    }
+
+  
   </style>
 </head>
 
 <body>
   <nav class="navbar navbar-light navbar-expand-md">
+    <div class="container-fluid">
     <a class="navbar-brand ms-5" href="http://127.0.0.1:8000/advertisement/"><Strong>AdTarget</Strong></a>
-    <div class="d-flex flex-row-reverse collapse navbar-collapse" id="navbar1">
-      <ul class="navbar-nav mr-auto">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar1" aria-controls="navbar1" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbar1">
+      <ul class="navbar-nav ms-auto">
         <li class="nav-item">
           <a class="nav-link" href="http://127.0.0.1:8000/advertisement/service/">서비스 소개</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="http://127.0.0.1:8000/advertisement/data/">기반 데이터 소개</a>
-        </li>
         <li class="nav-item active">
+          <a class="nav-link" href="http://127.0.0.1:8000/advertisement/data/">자치구별 현황 분석</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="http://127.0.0.1:8000/advertisement/service1">고객별 맞춤형 광고 알고리즘</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="http://127.0.0.1:8000/advertisement/service2">서비스별 타겟 고객 및 광고 송출 서비스</a>
+          <a class="nav-link" href="http://127.0.0.1:8000/advertisement/service2">서비스별 타겟 고객 및 광고 송출 서비스 추천</a>
         </li>
       </ul>
+    </div>
     </div>
   </nav>
 
   <header>
-    <img src="https://t4.ftcdn.net/jpg/03/21/09/07/240_F_321090768_4rGy0wYi3lB98iTMELBEtOn8AqbbTJrO.jpg" alt="main image" width = "100%">
-  </header>
-
-  <section class="d-flex flex-wrap justify-content-around mt-2">
     <div class="text-center w-100">
-      <strong style='font-size: 2rem; color: #007bff;'>Our Services</strong>
+        <h1><Strong style="font-size: 2rem;">자치구별 현황 분석</Strong></h1>
+    </div>
+</header>
+
+<section class="d-flex flex-column justify-content-center align-items-center mt-3">
+    <div class="container">
+        <h1>자치구 연령대별 인구 총합</h1>
+        <div class="photo-item">
+            <img src="image/district_20.png" alt="자치구별 20대 인구 총합">
+            <h3 class="photo-title">자치구별 20대 인구 총합</h3>
+            <p class="photo-description">사진 설명 1</p>
+        </div>
+        <div class="photo-item">
+            <img src="./image/district_30.png" alt="자치구별 30대 인구 총합">
+            <h3 class="photo-title">자치구별 30대 인구 총합</h3>
+            <p class="photo-description">사진 설명 2</p>
+        </div>
+        <div class="photo-item">
+            <img src="./image/district_40.png" alt="자치구별 40대 인구 총합">
+            <h3 class="photo-title">자치구별 40대 인구 총합</h3>
+            <p class="photo-description">사진 설명 3</p>
+        </div>
+        <div class="photo-item">
+            <img src="./image/district_50.png" alt="자치구별 50대 인구 총합">
+            <h3 class="photo-title">자치구별 50대 인구 총합</h3>
+            <p class="photo-description">사진 설명 4</p>
+        </div>
+        <div class="photo-item">
+            <img src="./images/district_60.png" alt="자치구별 60대 인구 총합">
+            <h3 class="photo-title">자치구별 60대 인구 총합</h3>
+            <p class="photo-description">사진 설명 4</p>
+        </div>
+        <div class="photo-item">
+            <img src="./images/district_70.png" alt="자치구별 70대 인구 총합">
+            <h3 class="photo-title">자치구별 70대 인구 총합</h3>
+            <p class="photo-description">사진 설명 4</p>
+        </div>
     </div>
 
     <div class="container">
-      <div class="row row-cols-xs-1 row-cols-md-2 row-cols-4 justify-content-center">
-        <article class="card my-3 mx-5 p-3" style="width: 18rem;">
-          <img src="https://t4.ftcdn.net/jpg/06/29/80/75/240_F_629807512_hpi0NZqqsM5cUeiPrGBsxsqKl1absShp.jpg" class="card-img-top" alt="service1" height=170>
-          <div class="card-body">
-            <h5 class="card-title">고객별 맞춤형 광고 알고리즘</h5>
-            <h6 class="card-subtitle mb-2 text-body-secondary">고객의 자치구, 연령대, 성별에 따라 고객 개개인의 광고 알고리즘에 넣을 서비스를 추천하는 시스템입니다.</h6>
-            <a class="btn btn-primary" href="http://127.0.0.1:8000/advertisement/service1/" role="button">서비스 바로가기</a>
-          </div>
-        </article>
-
-        <article class="card my-3 mx-5 p-3" style="width: 18rem;">
-          <img src="https://t4.ftcdn.net/jpg/02/94/86/37/240_F_294863782_fEMkDvBOq1L66Ck83lLydsz8MMIympZI.jpg" class="card-img-top" alt="service2" height=170>
-          <div class="card-body">
-            <h5 class="card-title">서비스별 타겟 고객 및 광고 송출 서비스</h5>
-            <h6 class="card-subtitle mb-2 text-body-secondary">게임, 금융, 쇼핑, 동영상/방송, 유튜브, 넷플릭스, 배달 서비스 광고주분들을 위해 서비스의 이용수가 가장 많은 타겟 고객의 자치구, 연령대, 성별을 우선순위 순으로 정렬해드리며, 맞춤형 광고 송출 대상 서비스를 추천하는 시스템입니다. </h6>
-            <a class="btn btn-primary" href="http://127.0.0.1:8000/advertisement/service2/" role="button">서비스 바로가기</a>
-          </div>
-        </article>
-
-      </div>
-
+        <h1>자치구 연령대별 남성 인구 총합</h1>
+        <div class="photo-item">
+            <img src="./images/district_m_20.png" alt="자치구별 20대 남성 인구 총합">
+            <h3 class="photo-title">자치구별 20대 남성 인구 총합</h3>
+            <p class="photo-description">사진 설명 4</p>
+        </div>
+        <div class="photo-item">
+            <img src="./images/district_m_30.png" alt="자치구별 30대 남성 인구 총합">
+            <h3 class="photo-title">자치구별 30대 남성 인구 총합</h3>
+            <p class="photo-description">사진 설명 4</p>
+        </div>
+        <div class="photo-item">
+            <img src="./images/district_m_40.png" alt="자치구별 40대 남성 인구 총합">
+            <h3 class="photo-title">자치구별 40대 남성 인구 총합</h3>
+            <p class="photo-description">사진 설명 4</p>
+        </div>
+        <div class="photo-item">
+            <img src="./images/district_m_50.png" alt="자치구별 50대 남성 인구 총합">
+            <h3 class="photo-title">자치구별 50대 남성 인구 총합</h3>
+            <p class="photo-description">사진 설명 4</p>
+        </div>
+        <div class="photo-item">
+            <img src="./images/district_m_70.png" alt="자치구별 70대 남성 인구 총합">
+            <h3 class="photo-title">자치구별 70대 남성 인구 총합</h3>
+            <p class="photo-description">사진 설명 4</p>
+        </div>
     </div>
-  </section>
+
+    <div class="container">
+        <h1>자치구 연령대별 여성 인구 총합</h1>
+        <div class="photo-item">
+            <img src="./images/district_f_20.png" alt="자치구별 20대 여성 인구 총합">
+            <h3 class="photo-title">자치구별 20대 여성 인구 총합</h3>
+            <p class="photo-description">사진 설명 4</p>
+        </div>
+        <div class="photo-item">
+            <img src="./images/district_f_30.png" alt="자치구별 30대 여성 인구 총합">
+            <h3 class="photo-title">자치구별 30대 여성 인구 총합</h3>
+            <p class="photo-description">사진 설명 4</p>
+        </div>
+        <div class="photo-item">
+            <img src="./images/district_f_40.png" alt="자치구별 40대 여성 인구 총합">
+            <h3 class="photo-title">자치구별 40대 여성 인구 총합</h3>
+            <p class="photo-description">사진 설명 4</p>
+        </div>
+        <div class="photo-item">
+            <img src="./images/district_f_50.png" alt="자치구별 50대 여성 인구 총합">
+            <h3 class="photo-title">자치구별 50대 여성 인구 총합</h3>
+            <p class="photo-description">사진 설명 4</p>
+        </div>
+        <div class="photo-item">
+            <img src="./images/district_f_70.png" alt="자치구별 70대 여성 인구 총합">
+            <h3 class="photo-title">자치구별 70대 여성 인구 총합</h3>
+            <p class="photo-description">사진 설명 4</p>
+        </div>
+    </div>
+    
+</section>
+
 
   <footer class="text-center mt-4">
     <h1 style="font-size: 15px; color: gray;">데이터 분석&엔지니어 취업캠프(Python) 30회차</h1>

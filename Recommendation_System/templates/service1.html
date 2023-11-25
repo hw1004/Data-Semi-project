@@ -13,7 +13,7 @@
   <style>
     /* 네비게이션 바 배경색, 폰트, 여백 등 스타일 지정 */
     .navbar {
-      background-color: #E1F6FA; /* 배경색 */
+      background-color: #FFFFFF; /* 배경색 */
       font-family: 'Arial', sans-serif; /* 폰트 */
       padding: 10px 0; /* 위아래 여백 */
     }
@@ -104,7 +104,7 @@
           <a class="nav-link" href="http://127.0.0.1:8000/advertisement/service/">서비스 소개</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="http://127.0.0.1:8000/advertisement/data/">기반 데이터 소개</a>
+          <a class="nav-link" href="http://127.0.0.1:8000/advertisement/data/">자치구별 현황 분석</a>
         </li>
         <li class="nav-item active">
           <a class="nav-link" href="http://127.0.0.1:8000/advertisement/service1">고객별 맞춤형 광고 알고리즘</a>
@@ -124,7 +124,6 @@
   </header>
 
   <section class="d-flex flex-column justify-content-center align-items-center mt-3">
-    <h2 class="text-center mb-3">Service Recommendation</h2>
     <form method="post" class="mt-4 p-4 border rounded">
       {% csrf_token %}
       <div class="row mb-3">
@@ -188,8 +187,11 @@
   </div>
     </form> 
     <hr>
-    <div class="container mt-2 table-responsive">
-      <h2 class="text-center mb-4">Recommended Services</h2>
+    <div class="container mt-2">
+      <h5 class="text-center mb-4"><strong>{{ 자치구 }}에 거주하는 {{ 연령대 }}대의 {{ 성별 }}이 가장 많이 사용하는 서비스는 {{ first }}입니다.</strong></h5>
+      <h5 class="text-center mb-4">해당 고객의 사용 서비스 우선순위에 따라 해당 고객에게 나타날 광고 서비스의 우선순위는 아래와 같습니다.</h5>
+    </div>
+    <div class="container mt-5 table-responsive">
       <table style="width: 600px" class="table table-bordered border-primary text-center">
         <thead class="thead-dark">
           <tr>

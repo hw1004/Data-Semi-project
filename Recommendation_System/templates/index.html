@@ -13,7 +13,7 @@
   <style>
     /* 네비게이션 바 배경색, 폰트, 여백 등 스타일 지정 */
     .navbar {
-      background-color: #E1F6FA; /* 배경색 */
+      background-color: #FFFFFF; /* 배경색 */
       font-family: 'Arial', sans-serif; /* 폰트 */
       padding: 10px 0; /* 위아래 여백 */
     }
@@ -104,7 +104,7 @@
           <a class="nav-link" href="http://127.0.0.1:8000/advertisement/service/">서비스 소개</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="http://127.0.0.1:8000/advertisement/data/">기반 데이터 소개</a>
+          <a class="nav-link" href="http://127.0.0.1:8000/advertisement/data/">자치구별 현황 분석</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="http://127.0.0.1:8000/advertisement/service1">고객별 맞춤형 광고 알고리즘</a>
@@ -118,38 +118,42 @@
   </nav>
 
   <header>
-    <img src="https://png.pngtree.com/background/20210715/original/pngtree-bright-and-simple-light-blue-banner-background-picture-image_1303887.jpg" alt="main image" width = "100%" height="200">
-  </header>
-
-  <section class="d-flex flex-wrap justify-content-around mt-2">
-    <div class="text-center w-100">
-      <strong style='font-size: 2rem; color: #007bff;'>Our Services</strong>
-    </div>
-
-    <div class="container">
-      <div class="row row-cols-xs-1 row-cols-md-2 row-cols-4 justify-content-center">
-        <article class="card my-3 mx-5 p-3" style="width: 18rem;">
-          <img src="https://t4.ftcdn.net/jpg/06/29/80/75/240_F_629807512_hpi0NZqqsM5cUeiPrGBsxsqKl1absShp.jpg" class="card-img-top" alt="service1" height=170>
-          <div class="card-body">
-            <h5 class="card-title">고객별 맞춤형 광고 알고리즘</h5>
-            <h6 class="card-subtitle mb-2 text-body-secondary">고객의 자치구, 연령대, 성별에 따라 고객 개개인의 광고 알고리즘에 넣을 서비스를 추천하는 시스템입니다.</h6>
-            <a class="btn btn-primary" href="http://127.0.0.1:8000/advertisement/service1/" role="button">서비스 바로가기</a>
-          </div>
-        </article>
-
-        <article class="card my-3 mx-5 p-3" style="width: 18rem;">
-          <img src="https://t4.ftcdn.net/jpg/02/94/86/37/240_F_294863782_fEMkDvBOq1L66Ck83lLydsz8MMIympZI.jpg" class="card-img-top" alt="service2" height=170>
-          <div class="card-body">
-            <h5 class="card-title">서비스별 타겟 고객 및 광고 송출 서비스</h5>
-            <h6 class="card-subtitle mb-2 text-body-secondary">게임, 금융, 쇼핑, 동영상/방송, 유튜브, 넷플릭스, 배달 서비스 광고주분들을 위해 서비스의 이용수가 가장 많은 타겟 고객의 자치구, 연령대, 성별을 우선순위 순으로 정렬해드리며, 맞춤형 광고 송출 대상 서비스를 추천하는 시스템입니다. </h6>
-            <a class="btn btn-primary" href="http://127.0.0.1:8000/advertisement/service2/" role="button">서비스 바로가기</a>
-          </div>
-        </article>
-
+    <div id="carouselExampleDark" class="carousel carousel-dark slide">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
       </div>
-
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="10000">
+          <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=1476&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" height = 1000 class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h4 style="color: white;"><strong>자치구별 현황 분석</strong></h4>
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+          <img src="https://advertisingweek.com/wp-content/uploads/2022/08/content-marketing-related-vector-illustration-flat-modern-design-vector-id1200957578.jpg" height = 1000 class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h4><strong>고객별 맞춤형 광고 알고리즘</strong></h4>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://thumbs.dreamstime.com/b/recommendation-word-cloud-concept-grey-background-88649745.jpg" height = 1000 class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h4><strong>서비스별 타겟 및 광고 송출 서비스 추천</strong></h4>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
-  </section>
+</header>
 
   <footer class="text-center mt-4">
     <h1 style="font-size: 15px; color: gray;">데이터 분석&엔지니어 취업캠프(Python) 30회차</h1>

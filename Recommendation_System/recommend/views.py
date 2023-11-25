@@ -7,9 +7,6 @@ import matplotlib.font_manager as fm
 from django.conf import settings
 
 
-plt.rcParams['font.family'] = 'Malgun Gothic'  # 'Malgun Gothic'은 윈도우에서 기본적으로 제공하는 한글 폰트입니다.
-plt.rcParams['axes.unicode_minus'] = False
-
 df = pd.read_excel("C:/Users/USER/data_semi_project/project/services_priority.xlsx")
 
 def index(request):
@@ -43,9 +40,13 @@ def service1(request):
         # 순위와 함께 결과를 출력
         services = []
         for i, service in enumerate(service_data.values[0], 1):
-            services.append(f"{i} {service}")
+            services.append(f"{i}순위 {service}")
+        # 1순위 서비스
+        first = services[0][4:]
         
-        return render(request, 'service1.html', {'services': services})
+        성별 = ('남성' if 성별 == "M" else '여성')
+        
+        return render(request, 'service1.html', {'자치구': 자치구, '연령대': 연령대, '성별':성별, 'services': services, 'first': first})
     else:
         return render(request, 'service1.html')
 
@@ -81,16 +82,36 @@ def service2(request):
         target_services = df.iloc[:, 5:]
 
         # 상위 7개의 타겟을 추천
-        recommended_targets = sorted_target[:7].index.tolist()
+        recommended_targets = sorted_target[:10].index.tolist()
 
         # 순위와 함께 결과를 출력
         targets = []
         other_services = []
         for i, target in enumerate(recommended_targets, 1):
-            targets.append(f"{i}순위: {target}")
-        for i, service in enumerate(target_services, 1):
+            targets.append(f"{i}순위 {target[0]} {'남성' if target[1] == 'M' else '여성'} {target[2]}대")
+        for i, service in enumerate(target_services.values[0], 1):
             other_services.append(f"{i}순위: {service}")
-
-        return render(request, 'service2.html', {'targets': targets, 'other_services': other_services})
+        # 1순위 서비스
+        first = []
+        # 나머지 서비스
+        others = []
+        i = 0
+        for service in other_services:
+            if i == 0:
+                first.append(service)
+                i += 1
+            else:
+                others.append(service)
+        
+        # 1순위 서비스에서 서비스 이름만 뽑기
+        top = first[0][5:]
+        
+        # 1순위 고객의 자치구, 성별, 연령대
+        first_customer = targets[0][4:]
+            
+        # 1순위 고객에 대해 상관관계 높은 서비스 1순위
+        top_service = first[0][5:]
+        
+        return render(request, 'service2.html', {'top_service': top_service, 'first_customer':first_customer, 'top':top, 'first': first, 'others':others, '서비스': 서비스, 'targets': targets, 'other_services': other_services})
     else:
         return render(request, 'service2.html')
