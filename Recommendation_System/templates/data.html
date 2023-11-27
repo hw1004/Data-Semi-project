@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -109,7 +110,7 @@
           <a class="nav-link" href="http://127.0.0.1:8000/advertisement/service/">서비스 소개</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="http://127.0.0.1:8000/advertisement/data/">자치구별 현황 분석</a>
+          <a class="nav-link" href="http://127.0.0.1:8000/advertisement/data/">데이터 소개 및 현황 분석</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="http://127.0.0.1:8000/advertisement/service1">고객별 맞춤형 광고 알고리즘</a>
@@ -123,103 +124,165 @@
   </nav>
 
   <header>
-    <div class="text-center w-100">
-        <h1><Strong style="font-size: 2rem;">자치구별 현황 분석</Strong></h1>
+    <div style="background-color: #CEECF5;" class="text-center w-100 p-2">
+      <h1><Strong style="font-size: 1.5rem;">데이터 소개 및 현황 분석</Strong></h1>
+  </div>
+    <div class="container mt-5 md-4 mb-5" style="width: 800px;">
+      <div class="row">
+        <div class="col-12 border rounded border-primary border-2">
+          <p class="mt-5 mb-5" style="font-size: 17px;">
+            자치구별 연령대에 따른 인구 총합, 자치구별 성별 연령대에 따른 인구 총합, 게임, 금융, 배달, 넷플릭스, 동영상/방송, 유튜브, 쇼핑 등 다양한 서비스와 연령대 간의 상관관계를 비교하는 히트맵, 그리고 자치구별 남녀 각각 평균 연령대와 총인구 평균 연령대를 지도 그래프로 보여주는 서비스입니다.
+          </p>
+          <p>본 서비스는 서울특별시의 공식 데이터 플랫폼인 '서울열린데이터광장'에서 제공하는 '서울생활인구' 데이터를 기반으로 합니다. 해당 데이터는 서울시민들의 생활 현황을 정교하게 표현하며, 이를 통해 우리는 자치구별, 연령대별, 성별별 인구 수와 같은 다양한 인구 통계 정보를 얻을 수 있습니다.</p>
+          <p>
+            또한, 이 데이터를 활용하여 다양한 서비스와 연령대 간의 상관관계를 분석하였습니다. 이를 통해 게임, 금융, 배달, 넷플릭스, 동영상/방송, 유튜브, 쇼핑 등의 서비스 이용 패턴이 연령대와 지역에 따라 어떻게 변화하는지를 파악할 수 있었습니다.
+          </p>
+          <p class="mb-5">뿐만 아니라, 자치구별 남녀 각각의 평균 연령대와 총인구 평균 연령대를 지도 그래프로 시각화하여, 서울시민들의 연령 분포와 그 변화를 쉽게 파악할 수 있도록 하였습니다.
+            정보의 출처는 '서울열린데이터광장'의 '서울생활인구' 섹션입니다. 자세한 정보는 아래의 <a href="https://data.seoul.go.kr/dataVisual/seoul/seoulLiving.do" target="_blank">링크</a>를 통해 확인하실 수 있습니다.
+          </p>
+        </div>
+      </div>
     </div>
 </header>
 
 <section class="d-flex flex-column justify-content-center align-items-center mt-3">
-    <div class="container">
-        <h1>자치구 연령대별 인구 총합</h1>
-        <div class="photo-item">
-            <img src="image/district_20.png" alt="자치구별 20대 인구 총합">
-            <h3 class="photo-title">자치구별 20대 인구 총합</h3>
-            <p class="photo-description">사진 설명 1</p>
+  <div class="container">
+    <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseOne" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">자치구 연령대별 인구 총합</a>
+    <div id="collapseOne" class="collapse">
+      <div class="row">
+        <div class="col-md-6 photo-item">
+            <img src="{% static 'image/district_20.png'%}" alt="자치구별 20대 인구 총합">
         </div>
-        <div class="photo-item">
-            <img src="./image/district_30.png" alt="자치구별 30대 인구 총합">
-            <h3 class="photo-title">자치구별 30대 인구 총합</h3>
-            <p class="photo-description">사진 설명 2</p>
+        <div class="col-md-6 photo-item">
+            <img src="{% static 'image/district_30.png'%}" alt="자치구별 30대 인구 총합">
         </div>
-        <div class="photo-item">
-            <img src="./image/district_40.png" alt="자치구별 40대 인구 총합">
-            <h3 class="photo-title">자치구별 40대 인구 총합</h3>
-            <p class="photo-description">사진 설명 3</p>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 photo-item">
+            <img src="{% static 'image/district_40.png'%}" alt="자치구별 40대 인구 총합">
         </div>
-        <div class="photo-item">
-            <img src="./image/district_50.png" alt="자치구별 50대 인구 총합">
-            <h3 class="photo-title">자치구별 50대 인구 총합</h3>
-            <p class="photo-description">사진 설명 4</p>
+        <div class="col-md-6 photo-item">
+          <img src="{% static 'image/district_50.png'%}" alt="자치구별 50대 인구 총합">
         </div>
-        <div class="photo-item">
-            <img src="./images/district_60.png" alt="자치구별 60대 인구 총합">
-            <h3 class="photo-title">자치구별 60대 인구 총합</h3>
-            <p class="photo-description">사진 설명 4</p>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 photo-item">
+            <img src="{% static 'image/district_60.png'%}" alt="자치구별 60대 인구 총합">
         </div>
-        <div class="photo-item">
-            <img src="./images/district_70.png" alt="자치구별 70대 인구 총합">
-            <h3 class="photo-title">자치구별 70대 인구 총합</h3>
-            <p class="photo-description">사진 설명 4</p>
+        <div class="col-md-6 photo-item">
+            <img src="{% static 'image/district_70.png'%}" alt="자치구별 70대 인구 총합">
         </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <button class="btn btn-primary mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="multiCollapseExample2">자치구 연령대별 남성 인구 총합</button>
+    <div id="collapseTwo" class="collapse">
+      <div class="row">
+        <div class="col-md-6 photo-item">
+            <img src="{% static 'image/district_m_20.png'%}" alt="자치구별 20대 남성 인구 총합">
+        </div>
+        <div class="col-md-6 photo-item">
+            <img src="{% static 'image/district_m_30.png'%}" alt="자치구별 30대 남성 인구 총합">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 photo-item">
+            <img src="{% static 'image/district_m_40.png'%}" alt="자치구별 40대 남성 인구 총합">
+        </div>
+        <div class="col-md-6 photo-item">
+            <img src="{% static 'image/district_m_50.png'%}" alt="자치구별 50대 남성 인구 총합">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 photo-item">
+            <img src="{% static 'image/district_m_60.png'%}" alt="자치구별 60대 남성 인구 총합">
+        </div>
+        <div class="col-md-6 photo-item">
+            <img src="{% static 'image/district_m_70.png'%}" alt="자치구별 70대 남성 인구 총합">
+        </div>
+      </div>
     </div>
 
     <div class="container">
-        <h1>자치구 연령대별 남성 인구 총합</h1>
-        <div class="photo-item">
-            <img src="./images/district_m_20.png" alt="자치구별 20대 남성 인구 총합">
-            <h3 class="photo-title">자치구별 20대 남성 인구 총합</h3>
-            <p class="photo-description">사진 설명 4</p>
+      <button class="btn btn-primary mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">자치구 연령대별 여성 인구 총합</button>
+      <div id="collapseThree" class="collapse">
+        <div class="row">
+          <div class="col-md-6 photo-item">
+              <img src="{% static 'image/district_f_20.png'%}" alt="자치구별 20대 여성 인구 총합">
+          </div>
+          <div class="col-md-6 photo-item">
+              <img src="{% static 'image/district_f_30.png'%}" alt="자치구별 30대 여성 인구 총합">
+          </div>
         </div>
-        <div class="photo-item">
-            <img src="./images/district_m_30.png" alt="자치구별 30대 남성 인구 총합">
-            <h3 class="photo-title">자치구별 30대 남성 인구 총합</h3>
-            <p class="photo-description">사진 설명 4</p>
+        <div class="row">
+          <div class="col-md-6 photo-item">
+              <img src="{% static 'image/district_f_40.png'%}" alt="자치구별 40대 여성 인구 총합">
+          </div>
+          <div class="col-md-6 photo-item">
+              <img src="{% static 'image/district_f_50.png'%}" alt="자치구별 50대 여성 인구 총합">
+          </div>
         </div>
-        <div class="photo-item">
-            <img src="./images/district_m_40.png" alt="자치구별 40대 남성 인구 총합">
-            <h3 class="photo-title">자치구별 40대 남성 인구 총합</h3>
-            <p class="photo-description">사진 설명 4</p>
+        <div class="row">
+          <div class="col-md-6 photo-item">
+              <img src="{% static 'image/district_f_60.png'%}" alt="자치구별 60대 여성 인구 총합">
+          </div>
+          <div class="col-md-6 photo-item">
+              <img src="{% static 'image/district_f_70.png'%}" alt="자치구별 70대 여성 인구 총합">
+          </div>
         </div>
-        <div class="photo-item">
-            <img src="./images/district_m_50.png" alt="자치구별 50대 남성 인구 총합">
-            <h3 class="photo-title">자치구별 50대 남성 인구 총합</h3>
-            <p class="photo-description">사진 설명 4</p>
-        </div>
-        <div class="photo-item">
-            <img src="./images/district_m_70.png" alt="자치구별 70대 남성 인구 총합">
-            <h3 class="photo-title">자치구별 70대 남성 인구 총합</h3>
-            <p class="photo-description">사진 설명 4</p>
-        </div>
+      </div>
     </div>
-
+    
     <div class="container">
-        <h1>자치구 연령대별 여성 인구 총합</h1>
-        <div class="photo-item">
-            <img src="./images/district_f_20.png" alt="자치구별 20대 여성 인구 총합">
-            <h3 class="photo-title">자치구별 20대 여성 인구 총합</h3>
-            <p class="photo-description">사진 설명 4</p>
+      <button class="btn btn-primary mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">서비스별 상관관계</button>
+      <div id="collapseFour" class="collapse">
+        <div class="row">
+          <div class="col-md-6 photo-item">
+              <img src="{% static 'image/hmap_20.png'%}" style="width: 600px;" alt="20대의 각 서비스 별 상관관계">
+          </div>
+          <div class="col-md-6 photo-item">
+              <img src="{% static 'image/hmap_30.png'%}" style="width: 600px;" alt="30대의 각 서비스 별 상관관계">
+          </div>
         </div>
-        <div class="photo-item">
-            <img src="./images/district_f_30.png" alt="자치구별 30대 여성 인구 총합">
-            <h3 class="photo-title">자치구별 30대 여성 인구 총합</h3>
-            <p class="photo-description">사진 설명 4</p>
+        <div class="row">
+          <div class="col-md-6 photo-item">
+              <img src="{% static 'image/hmap_40.png'%}" style="width: 600px;" alt="40대의 각 서비스 별 상관관계">
+          </div>
+          <div class="col-md-6 photo-item">
+              <img src="{% static 'image/hmap_50.png'%}" style="width: 600px;" alt="50대의 각 서비스 별 상관관계">
+          </div>
         </div>
-        <div class="photo-item">
-            <img src="./images/district_f_40.png" alt="자치구별 40대 여성 인구 총합">
-            <h3 class="photo-title">자치구별 40대 여성 인구 총합</h3>
-            <p class="photo-description">사진 설명 4</p>
+        <div class="row">
+          <div class="col-md-6 photo-item">
+              <img src="{% static 'image/hmap_60.png'%}" style="width: 600px;" alt="60대의 각 서비스 별 상관관계">
+          </div>
+          <div class="col-md-6 photo-item">
+              <img src="{% static 'image/hmap_70.png'%}" style="width: 600px;" alt="70대의 각 서비스 별 상관관계">
+          </div>
         </div>
-        <div class="photo-item">
-            <img src="./images/district_f_50.png" alt="자치구별 50대 여성 인구 총합">
-            <h3 class="photo-title">자치구별 50대 여성 인구 총합</h3>
-            <p class="photo-description">사진 설명 4</p>
-        </div>
-        <div class="photo-item">
-            <img src="./images/district_f_70.png" alt="자치구별 70대 여성 인구 총합">
-            <h3 class="photo-title">자치구별 70대 여성 인구 총합</h3>
-            <p class="photo-description">사진 설명 4</p>
-        </div>
+      </div>
     </div>
+    
+  <div class="container">
+    <button class="btn btn-primary mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive">자치구별 평균연령</button>
+    <div id="collapseFive" class="collapse">
+      <div class="photo-item">
+          <img src="{% static 'image/seoul_map.png'%}" style="width: 700px;" alt="자치구별 종합 평균연령">
+          <p class="photo-title">자치구별 종합 평균연령</p>
+      </div>
+      <div class="photo-item">
+          <img src="{% static 'image/m_seoul_map.png'%}" style="width: 700px;" alt="자치구별 남자 평균연령">
+          <p class="photo-title">자치구별 남자 평균연령</p>
+      </div>
+      <div class="photo-item">
+          <img src="{% static 'image/f_seoul_map.png'%}" style="width: 700px;" alt="자치구별 여자 평균연령">
+          <p class="photo-title">자치구별 여자 평균연령</p>
+      </div>
+  </div>
     
 </section>
 

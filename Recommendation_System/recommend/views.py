@@ -7,7 +7,7 @@ import matplotlib.font_manager as fm
 from django.conf import settings
 
 
-df = pd.read_excel("C:/Users/USER/data_semi_project/project/services_priority.xlsx")
+df = pd.read_excel("./services_priority.xlsx")
 
 def index(request):
     return render(request, 'index.html')

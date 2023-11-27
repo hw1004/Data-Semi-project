@@ -104,7 +104,7 @@
           <a class="nav-link" href="http://127.0.0.1:8000/advertisement/service/">서비스 소개</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="http://127.0.0.1:8000/advertisement/data/">자치구별 현황 분석</a>
+          <a class="nav-link" href="http://127.0.0.1:8000/advertisement/data/">데이터 소개 및 현황 분석</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="http://127.0.0.1:8000/advertisement/service1">고객별 맞춤형 광고 알고리즘</a>
@@ -121,6 +121,15 @@
     <div style="background-color: #CEECF5;" class="text-center w-100 p-2">
       <h1><Strong style="font-size: 1.5rem;">서비스별 타겟 고객 및 광고 송출 서비스</Strong></h1>
     </div>
+  <div class="container mt-5 md-4 mb-4 text-center" style="width: 700px;">
+    <div class="row">
+      <div class="col-12 border rounded border-primary border-2">
+        <p class="mt-5 mb-5" style="font-size: 17px;">
+          게임, 금융, 쇼핑, 동영상/방송, 유튜브, 넷플릭스, 배달 서비스 광고주분들을 위해 서비스의 이용수가 가장 많은 타겟 고객의 자치구, 연령대, 성별을 우선순위 순으로 정렬해드리며, 맞춤형 광고 송출 대상 서비스를 추천해드리는 시스템입니다.
+        </p>
+      </div>
+    </div>
+  </div>
   </header>
 
   <section class="d-flex flex-column justify-content-center align-items-center mt-3">
@@ -146,18 +155,19 @@
     </div>
     </div>
     </form> 
+    {% if request.method == 'POST' %}
     <hr>
     <div class="container mt-2">
-      <h5 class="text-center mb-4"><strong>{{ 서비스 }}를 가장 많이 이용하는 고객은 {{first_customer}}입니다.</strong></h5>
-      <h5 class="text-center mb-4"><strong>해당 고객에 대해 {{ 서비스 }}와 상관관계가 가장 높은 타서비스는 {{ top_service }}입니다.</strong></h5>
-      <h5 class="text-center mb-4">{{ 서비스 }}의 타겟 고객 우선순위와 타겟 고객별 광고 송출 서비스 추천 우선순위는 아래와 같습니다.</h5>
+      <h5 class="text-center mb-4"><strong>{{ request.POST.서비스 }}를 가장 많이 이용하는 고객은 {{ first_customer }}입니다.</strong></h5>
+      <h5 class="text-center mb-4"><strong>해당 고객에 대해 {{ request.POST.서비스 }}와 상관관계가 가장 높은 타서비스는 {{ top_service }}입니다.</strong></h5>
+      <h5 class="text-center mb-4">{{ request.POST.서비스 }}의 타겟 고객 우선순위와 타겟 고객별 광고 송출 서비스 추천 우선순위는 아래와 같습니다.</h5>
     </div>
     <div class="container mt-2 table-responsive">
       <table style="width: 600px" class="table table-bordered border-primary text-center">
         <thead class="thead-dark">
           <tr>
             <th scope="col">타겟 고객 우선순위</th>
-            <th>{{ 서비스 }} 타겟 고객별 광고 송출 서비스 추천</th>
+            <th>{{ request.POST.서비스 }} 타겟 고객별 광고 송출 서비스 추천</th>
           </tr>
         </thead>
         <tbody>
@@ -168,7 +178,7 @@
               <td> {{ service }}</td>
             {% endfor %}
           </tr>
-            {% for service in others %} 
+            {% for service in others %}
               <tr>
                 <td>{{ service }}</td>
               </tr>
@@ -177,6 +187,7 @@
         </tbody>
       </table>
     </div>
+{% endif %}
 
 
   </section>

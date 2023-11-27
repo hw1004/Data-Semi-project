@@ -104,7 +104,7 @@
           <a class="nav-link" href="http://127.0.0.1:8000/advertisement/service/">서비스 소개</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="http://127.0.0.1:8000/advertisement/data/">자치구별 현황 분석</a>
+          <a class="nav-link" href="http://127.0.0.1:8000/advertisement/data/">데이터 소개 및 현황 분석</a>
         </li>
         <li class="nav-item active">
           <a class="nav-link" href="http://127.0.0.1:8000/advertisement/service1">고객별 맞춤형 광고 알고리즘</a>
@@ -120,6 +120,15 @@
   <header>
     <div style="background-color: #CEECF5;" class="text-center w-100 p-2">
         <h1><Strong style="font-size: 1.5rem;">고객별 맞춤형 광고 알고리즘</Strong></h1>
+    </div>
+    <div class="container mt-5 md-4 mb-4" style="width: 700px;">
+      <div class="row">
+        <div class="col-12 border rounded border-primary border-2">
+          <p class="text-center mt-5 mb-5" style="font-size: 17px;">
+              고객의 자치구, 연령대, 성별에 따라 고객 개개인의 광고 알고리즘에 넣을 서비스를 우선순위에 따라 추천해 드리는 시스템입니다. 
+          </p>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -187,9 +196,11 @@
     </div>
   </div>
     </form> 
+
+    {% if request.method == 'POST' %}
     <hr>
     <div class="container mt-2">
-      <h5 class="text-center mb-4"><strong>{{ 자치구 }}에 거주하는 {{ 연령대 }}대의 {{ 성별 }}이 가장 많이 사용하는 서비스는 {{ first }}입니다.</strong></h5>
+      <h5 class="text-center mb-4"><strong>{{ request.POST.자치구 }}에 거주하는 {{ request.POST.연령대 }}대의 {{ 성별 }}이 가장 많이 사용하는 서비스는 {{ first }}입니다.</strong></h5>
       <h5 class="text-center mb-4">해당 고객의 사용 서비스 우선순위에 따라 해당 고객에게 나타날 광고 서비스의 우선순위는 아래와 같습니다.</h5>
     </div>
     <div class="container mt-5 table-responsive">
@@ -201,15 +212,14 @@
         </thead>
         <tbody>
           {% for service in services %}
-          <tr>
-            <td>{{ service }}</td>
-          </tr>
+            <tr>
+              <td>{{ service }}</td>
+            </tr>
           {% endfor %}
         </tbody>
       </table>
     </div>
-    </div>
-    </div>
+  {% endif %}
 
   </section>
 
