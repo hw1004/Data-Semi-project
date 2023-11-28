@@ -40,11 +40,14 @@ def service1(request):
         # 순위와 함께 결과를 출력
         services = []
         for i, service in enumerate(service_data.values[0], 1):
-            services.append(f"{i}순위 {service}")
+            if service == '동영상/방송 서비스':
+                service = '동영상방송 서비스'
+            services.append(f"{service}")
         # 1순위 서비스
-        first = services[0][4:]
+        first = services[0]
         
         성별 = ('남성' if 성별 == "M" else '여성')
+        
         
         return render(request, 'service1.html', {'자치구': 자치구, '연령대': 연령대, '성별':성별, 'services': services, 'first': first})
     else:
@@ -54,13 +57,13 @@ def service2(request):
     if request.method == 'POST':
         # 서비스와 파일명을 매칭
         service_files = {
-            '배달 서비스': "C:/Users/USER/data_semi_project/project/service_target/delivery.xlsx",
-            '금융 서비스': "C:/Users/USER/data_semi_project/project/service_target/finance.xlsx",
-            '게임 서비스': "C:/Users/USER/data_semi_project/project/service_target/game.xlsx",
-            '넷플릭스': "C:/Users/USER/data_semi_project/project/service_target/netflix.xlsx",
-            '쇼핑 서비스': "C:/Users/USER/data_semi_project/project/service_target/shopping.xlsx",
-            '유튜브': "C:/Users/USER/data_semi_project/project/service_target/youtube.xlsx",
-            '동영상/방송 서비스': "C:/Users/USER/data_semi_project/project/service_target/video.xlsx"
+            '배달 서비스': "./delivery.xlsx",
+            '금융 서비스': "./finance.xlsx",
+            '게임 서비스': "./game.xlsx",
+            '넷플릭스': "./netflix.xlsx",
+            '쇼핑 서비스': "./shopping.xlsx",
+            '유튜브': "./youtube.xlsx",
+            '동영상/방송 서비스': "./video.xlsx"
         }
 
         # 사용자 입력 받아오기
@@ -71,7 +74,7 @@ def service2(request):
             return HttpResponse("입력하신 서비스는 존재하지 않습니다. 다시 입력해주세요.")
 
         # 파일이 존재하면 해당 파일을 불러옵니다.
-        filename = os.path.join(settings.BASE_DIR, '..', 'service_target', service_files[서비스])
+        filename = os.path.join(settings.BASE_DIR, service_files[서비스])
         print(f"Attempting to open file at: {filename}")  # Add this line
         df = pd.read_excel(filename)
 

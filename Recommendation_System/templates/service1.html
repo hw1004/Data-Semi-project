@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -124,9 +125,9 @@
     <div class="container mt-5 md-4 mb-4" style="width: 700px;">
       <div class="row">
         <div class="col-12 border rounded border-primary border-2">
-          <p class="text-center mt-5 mb-5" style="font-size: 17px;">
-              고객의 자치구, 연령대, 성별에 따라 고객 개개인의 광고 알고리즘에 넣을 서비스를 우선순위에 따라 추천해 드리는 시스템입니다. 
-          </p>
+          <p class="text-center mt-5 mb-5" style="font-size: 16px;">
+            고객의 자치구, 연령대, 성별에 따라 고객 개개인의 광고 알고리즘에 넣을 서비스를<br> 우선순위에 따라 추천해 드리는 시스템입니다.또한, 해당 고객의 자치구, 연령대, <br>성별 정보에 따라 2023년 1월부터 9월까지 해당 고객 군집의 서비스별 <br> 사용일수 추이를 보여드립니다. 
+        </p>
         </div>
       </div>
     </div>
@@ -197,27 +198,44 @@
   </div>
     </form> 
 
-    {% if request.method == 'POST' %}
+  {% if request.method == 'POST' %}
     <hr>
     <div class="container mt-2">
       <h5 class="text-center mb-4"><strong>{{ request.POST.자치구 }}에 거주하는 {{ request.POST.연령대 }}대의 {{ 성별 }}이 가장 많이 사용하는 서비스는 {{ first }}입니다.</strong></h5>
       <h5 class="text-center mb-4">해당 고객의 사용 서비스 우선순위에 따라 해당 고객에게 나타날 광고 서비스의 우선순위는 아래와 같습니다.</h5>
     </div>
     <div class="container mt-5 table-responsive">
-      <table style="width: 600px" class="table table-bordered border-primary text-center">
+      <table style="width: 700px" class="table table-bordered border-primary text-center mb-5">
         <thead class="thead-dark">
           <tr>
+            <th scope="col">#</th>
             <th scope="col">광고 알고리즘 우선순위</th>
           </tr>
         </thead>
         <tbody>
           {% for service in services %}
             <tr>
+              <td>{{ forloop.counter }}</td>
               <td>{{ service }}</td>
             </tr>
           {% endfor %}
         </tbody>
       </table>
+      <div class="container text-center mt-5">
+        {% for service in services %}
+          {% if forloop.counter <= 3 %}
+            <img style="width: 300px;" src="{% static 'image/' %}{{ 자치구 }}_{{ 연령대 }}대_{{ 성별 }}_월별_{{ service }} 사용일수_변화.png" alt="이미지">
+          {% endif %}
+        {% endfor %}
+      </div>
+      
+      <div class="container text-center mt-5">
+        {% for service in services %}
+          {% if forloop.counter > 3 %}
+            <img style="width: 300px;" src="{% static 'image/' %}{{ 자치구 }}_{{ 연령대 }}대_{{ 성별 }}_월별_{{ service }} 사용일수_변화.png" alt="이미지">
+          {% endif %}
+        {% endfor %}
+      </div>
     </div>
   {% endif %}
 
