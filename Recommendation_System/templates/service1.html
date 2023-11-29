@@ -188,7 +188,6 @@
           <option value=40>40대</option>
           <option value=50>50대</option>
           <option value=60>60대</option>
-          <option value=70>70대</option>
       </select>
     </div>
     </div>
@@ -197,26 +196,33 @@
     </div>
   </div>
     </form> 
-
   {% if request.method == 'POST' %}
     <hr>
     <div class="container mt-2">
-      <h5 class="text-center mb-4"><strong>{{ request.POST.자치구 }}에 거주하는 {{ request.POST.연령대 }}대의 {{ 성별 }}이 가장 많이 사용하는 서비스는 {{ first }}입니다.</strong></h5>
+      <h5 class="text-center mb-4"><strong>{{ request.POST.자치구 }}에 거주하는 {{ request.POST.연령대 }}대의 {{ 성별 }}이 가장 많이 사용하는 월별 서비스의 순위입니다.</strong></h5>
       <h5 class="text-center mb-4">해당 고객의 사용 서비스 우선순위에 따라 해당 고객에게 나타날 광고 서비스의 우선순위는 아래와 같습니다.</h5>
     </div>
     <div class="container mt-5 table-responsive">
-      <table style="width: 700px" class="table table-bordered border-primary text-center mb-5">
+      <table style="width: 1200px" class="table table-bordered border-primary text-center mb-5">
         <thead class="thead-dark">
           <tr>
             <th scope="col">#</th>
-            <th scope="col">광고 알고리즘 우선순위</th>
+            <th scope="col" style="width: 160px;">1순위</th>
+            <th scope="col" style="width: 160px;">2순위</th>
+            <th scope="col" style="width: 160px;">3순위</th>
+            <th scope="col" style="width: 160px;">4순위</th>
+            <th scope="col" style="width: 160px;">5순위</th>
+            <th scope="col" style="width: 160px;">6순위</th>
+            <th scope="col" style="width: 160px;">7순위</th>
           </tr>
         </thead>
         <tbody>
-          {% for service in services %}
+          {% for i in data %}
             <tr>
-              <td>{{ forloop.counter }}</td>
-              <td>{{ service }}</td>
+              <td>{{ forloop.counter }}월</td>
+              {% for service in i %}
+                <td>{{ service }}</td>
+              {% endfor %}
             </tr>
           {% endfor %}
         </tbody>

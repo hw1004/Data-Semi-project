@@ -127,23 +127,23 @@
     <div style="background-color: #CEECF5;" class="text-center w-100 p-2">
       <h1><Strong style="font-size: 1.5rem;">데이터 소개 및 현황 분석</Strong></h1>
   </div>
-  <div class="container mt-5 md-4 mb-5" style="width: 800px;">
-    <div class="row">
-      <div class="col-12 border rounded border-primary border-2">
-        <h4 class="mt-5" style="color: #007bff;"><strong>데이터 소개</strong></h4>
-        <p class="mt-5 mb-5" style="font-size: 17px;">
-          자치구별 연령대에 따른 인구 총합, 자치구별 성별 연령대에 따른 인구 총합, 게임, 금융, <br>배달, 넷플릭스, 동영상/방송, 유튜브, 쇼핑 등 다양한 서비스와 연령대 간의 상관관계를<br> 비교하는 히트맵, 그리고 자치구별 남녀 각각 평균 연령대와 총인구 평균 연령대를 <br> 지도 그래프로 보여주는 서비스입니다.
-        </p>
-        <p style="font-size: 17px;">본 서비스는 서울특별시의 공식 데이터 플랫폼인 '서울열린데이터광장'에서 제공하는<br> '서울생활인구' 데이터를 기반으로 합니다. 해당 데이터는 서울시민들의 생활 현황을<br> 정교하게 표현하며, 이를 통해 자치구, 연령대, 성별에 따른 다양한 인구 통계 <br>정보를 얻을 수 있습니다.</p>
-        <p style="font-size: 17px;">
-          또한, 이 데이터를 활용하여 다양한 서비스와 연령대 간의 상관관계를 분석하였습니다. <br>이를 통해 각 서비스 이용 패턴이 연령대와 지역에 따라 어떻게 변화하는지를<br> 파악하였습니다.
-        </p>
-        <p class="mb-5" style="font-size: 17px;">뿐만 아니라, 자치구별 남녀 각각의 평균 연령대와 총인구 평균 연령대를 지도 그래프로<br> 시각화하여, 서울시민들의 연령 분포와 그 변화를 쉽게 파악할 수 있도록 하였습니다.
-        <br>자세한 정보는 <strong><a href="https://data.seoul.go.kr/dataVisual/seoul/seoulLiving.do" target="_blank">서울열린데이터광장</a></strong>를 통해 확인하실 수 있습니다.
-        </p>
+    <div class="container mt-5 md-4 mb-5" style="width: 800px;">
+      <div class="row">
+        <div class="col-12 border rounded border-primary border-2">
+          <h4 class="mt-5" style="color: #007bff;"><strong>데이터 소개</strong></h4>
+          <p class="mt-5 mb-5" style="font-size: 17px;">
+            자치구별 연령대에 따른 인구 총합, 자치구별 성별 연령대에 따른 인구 총합, 게임, 금융, <br>배달, 넷플릭스, 동영상/방송, 유튜브, 쇼핑 등 다양한 서비스와 연령대 간의 상관관계를<br> 비교하는 히트맵, 그리고 자치구별 남녀 각각 평균 연령대와 총인구 평균 연령대를 <br> 지도 그래프로 보여주는 서비스입니다.
+          </p>
+          <p style="font-size: 17px;">본 서비스는 서울특별시의 공식 데이터 플랫폼인 '서울열린데이터광장'에서 제공하는<br> '서울생활인구' 데이터를 기반으로 합니다. 해당 데이터는 서울시민들의 생활 현황을<br> 정교하게 표현하며, 이를 통해 자치구, 연령대, 성별에 따른 다양한 인구 통계 <br>정보를 얻을 수 있습니다.</p>
+          <p style="font-size: 17px;">
+            또한, 이 데이터를 활용하여 다양한 서비스와 연령대 간의 상관관계를 분석하였습니다. <br>이를 통해 각 서비스 이용 패턴이 연령대와 지역에 따라 어떻게 변화하는지를<br> 파악하였습니다.
+          </p>
+          <p class="mb-5" style="font-size: 17px;">뿐만 아니라, 자치구별 남녀 각각의 평균 연령대와 총인구 평균 연령대를 지도 그래프로<br> 시각화하여, 서울시민들의 연령 분포와 그 변화를 쉽게 파악할 수 있도록 하였습니다.
+          <br>자세한 정보는 <strong><a href="https://data.seoul.go.kr/dataVisual/seoul/seoulLiving.do" target="_blank">서울열린데이터광장</a></strong>를 통해 확인하실 수 있습니다.
+          </p>
+        </div>
       </div>
     </div>
-  </div>
 </header>
 
 <section class="d-flex flex-column justify-content-center align-items-center mt-3">
@@ -151,6 +151,7 @@
   <div class="container">
     <a style="width: 400px;" class="btn btn-primary mb-3" data-bs-toggle="collapse" href="#collapseOne" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">자치구 연령대별 인구 총합</a>
     <div id="collapseOne" class="collapse">
+      <p><strong>"이 그래프들은 20대부터 70대까지 각 자치구에서 연령대에 해당하는 인구 총합을 보여줍니다."</strong></p>
       <div class="row">
         <div class="col-md-6 photo-item">
             <img src="{% static 'image/district_20.png'%}" alt="자치구별 20대 인구 총합">
@@ -176,13 +177,55 @@
         <div class="col-md-6 photo-item">
             <img src="{% static 'image/district_70.png'%}" alt="자치구별 70대 인구 총합">
         </div>
-      </div>
+        <p><strong>각 자치구별 우선순위는 다음과 같습니다.</strong></p>
+        <table border="1" width="100%">
+          <tr>
+            <th></th>
+            <th>20대</th>
+            <th>30대</th>
+            <th>40대</th>
+            <th>50대</th>
+            <th>60대</th>
+            <th>70대</th>
+          </tr>
+          <tr>
+            <td>1순위</td>
+            <td>관악구</td>
+            <td>송파구</td>
+            <td>송파구</td>
+            <td>송파구</td>
+            <td>송파구</td>
+            <td>노원구</td>
+          </tr>
+          <tr>
+            <td>2순위</td>
+            <td>송파구</td>
+            <td>강서구</td>
+            <td>노원구</td>
+            <td>강서구</td>
+            <td>강서구</td>
+            <td>은평구</td>
+          </tr>
+          <tr>
+            <td>3순위</td>
+            <td>강서구</td>
+            <td>관악구</td>
+            <td>강남구</td>
+            <td>노원구</td>
+            <td>관악구</td>
+            <td>송파구</td>
+          </tr>
+        </table>
+        
+        <p class="mt-3"><strong>종합적으로 보면, 송파구가 가장 자주 상위권에 위치하며, 강서구와 노원구도 여러 연령대에서 인구가 많이 나타났습니다.</strong></p>
+    </div>
     </div>
   </div>
 
   <div class="container">
     <button style="width: 400px;" class="btn btn-primary mt-3 mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="multiCollapseExample2">자치구 연령대별 남성 인구 총합</button>
     <div id="collapseTwo" class="collapse">
+      <p><strong>"이 그래프들은 20대부터 70대까지 각 자치구에서 연령대별 남성에 해당하는 인구 총합을 보여줍니다."</strong></p>
       <div class="row">
         <div class="col-md-6 photo-item">
             <img src="{% static 'image/district_m_20.png'%}" alt="자치구별 20대 남성 인구 총합">
@@ -206,12 +249,53 @@
         <div class="col-md-6 photo-item">
             <img src="{% static 'image/district_m_70.png'%}" alt="자치구별 70대 남성 인구 총합">
         </div>
+        <p><strong>각 자치구별 우선순위는 다음과 같습니다.</strong></p>
+        <table border="1" width="100%">
+          <tr>
+            <th></th>
+            <th>20대</th>
+            <th>30대</th>
+            <th>40대</th>
+            <th>50대</th>
+            <th>60대</th>
+            <th>70대</th>
+          </tr>
+          <tr>
+            <td>1순위</td>
+            <td>관악구</td>
+            <td>송파구</td>
+            <td>송파구</td>
+            <td>송파구</td>
+            <td>송파구</td>
+            <td>은평구</td>
+          </tr>
+          <tr>
+            <td>2순위</td>
+            <td>송파구</td>
+            <td>관악구</td>
+            <td>노원구</td>
+            <td>노원구</td>
+            <td>강서구</td>
+            <td>송파구</td>
+          </tr>
+          <tr>
+            <td>3순위</td>
+            <td>노원구</td>
+            <td>강서구</td>
+            <td>강남구</td>
+            <td>강서구</td>
+            <td>관악구</td>
+            <td>관악구</td>
+          </tr>
+        </table>        
+        <p class="mt-3"><strong>종합적으로 보면, 송파구가 가장 자주 상위권에 위치하며, 또한 관악구와 노원구도 여러 연령대에서 상위 순위에 빈번하게 나타났습니다.</strong></p>
       </div>
     </div>
 
     <div class="container">
       <button style="width: 400px;" class="btn btn-primary mt-3 mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">자치구 연령대별 여성 인구 총합</button>
       <div id="collapseThree" class="collapse">
+        <p><strong>"이 그래프들은 20대부터 70대까지 각 자치구에서 연령대별 여성에 해당하는 인구 총합을 보여줍니다."</strong></p>
         <div class="row">
           <div class="col-md-6 photo-item">
               <img src="{% static 'image/district_f_20.png'%}" alt="자치구별 20대 여성 인구 총합">
@@ -235,13 +319,53 @@
           <div class="col-md-6 photo-item">
               <img src="{% static 'image/district_f_70.png'%}" alt="자치구별 70대 여성 인구 총합">
           </div>
-        </div>
+        <p><strong>각 자치구별 우선순위는 다음과 같습니다.</strong></p>
+        <table border="1" width="100%">
+          <tr>
+            <th></th>
+            <th>20대</th>
+            <th>30대</th>
+            <th>40대</th>
+            <th>50대</th>
+            <th>60대</th>
+            <th>70대</th>
+          </tr>
+          <tr>
+            <td>1순위</td>
+            <td>관악구</td>
+            <td>송파구</td>
+            <td>송파구</td>
+            <td>송파구</td>
+            <td>송파구</td>
+            <td>노원구</td>
+          </tr>
+          <tr>
+            <td>2순위</td>
+            <td>송파구</td>
+            <td>강서구</td>
+            <td>노원구</td>
+            <td>강서구</td>
+            <td>강서구</td>
+            <td>은평구</td>
+          </tr>
+          <tr>
+            <td>3순위</td>
+            <td>강서구</td>
+            <td>강남구</td>
+            <td>강남구</td>
+            <td>노원구</td>
+            <td>관악구</td>
+            <td>강서구</td>
+          </tr>
+        </table>               
+        <p class="mt-3"><strong>종합적으로 보면, 송파구가 가장 자주 상위권에 위치하며, 강서구, 관악구, 노원구 등도 여러 연령대에서 상위 순위에 빈번하게 나타났습니다.</strong></p>
       </div>
     </div>
     
     <div class="container">
       <button style="width: 400px;" class="btn btn-primary mt-3 mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">서비스별 상관관계</button>
       <div id="collapseFour" class="collapse">
+        <p><strong>"이 그래프들은 20대부터 70대까지 각 서비스별 상관관계를 보여줍니다."</strong></p>
         <div class="row">
           <div class="col-md-6 photo-item">
               <img src="{% static 'image/hmap_20.png'%}" style="width: 600px;" alt="20대의 각 서비스 별 상관관계">
@@ -266,24 +390,126 @@
               <img src="{% static 'image/hmap_70.png'%}" style="width: 600px;" alt="70대의 각 서비스 별 상관관계">
           </div>
         </div>
+        <p><strong>각 연령대별 높은 상관관계를 보이는 것은 다음과 같습니다.</strong></p>
+        <table border="1" width="100%">
+          <tr>
+            <th>연령대</th>
+            <th>게임</th>
+            <th>금융</th>
+            <th>쇼핑</th>
+            <th>배달</th>
+            <th>동영상/방송</th>
+            <th>넷플릭스</th>
+            <th>유튜브</th>
+          </tr>
+          <tr>
+            <td>20대</td>
+            <td>동영상/방송(0.85), <br> 유튜브(0.93)</td>
+            <td>쇼핑(0.81), <br> 배달(0.84)</td>
+            <td>금융(0.81)</td>
+            <td>금융(0.84)</td>
+            <td>게임(0.85), <br> 유튜브(0.82)</td>
+            <td>없음</td>
+            <td>게임(0.93), <br> 동영상/방송(0.82)</td>
+          </tr>
+          <tr>
+            <td>30대</td>
+            <td>금융(0.72), <br> 동영상/방송(0.91), <br> 유튜브(0.77)</td>
+            <td>게임(0.72), <br> 동영상/방송 (0.81)</td>
+            <td>없음</td>
+            <td>없음</td>
+            <td>게임(0.91), <br> 금융(0.81), <br> 유튜브(0.79)</td>
+            <td>없음</td>
+            <td>게임(0.77), <br> 동영상/방송(0.79)</td>
+          </tr>
+          <tr>
+            <td>40대</td>
+            <td>동영상/방송(0.87), <br> 유튜브(0.78), <br> 금융(0.72)</td>
+            <td>게임 (0.72), <br> 동영상/방송 (0.88), <br> 유튜브(0.81)</td>
+            <td>없음</td>
+            <td>없음</td>
+            <td>게임(0.87), <br> 금융 (0.88), <br> 유튜브(0.84)</td>
+            <td>없음</td>
+            <td>금융(0.81), <br> 동영상/방송(0.84), <br> 게임 서비스(0.78)</td>
+          </tr>
+          <tr>
+            <td>50대</td>
+            <td>동영상/방송(0.87), <br> 유튜브(0.80)</td>
+            <td>동영상/방송(0.81), <br> 넷플릭스 (0.75)</td>
+            <td>넷플릭스(0.75)</td>
+            <td>없음</td>
+            <td>게임(0.87), <br> 유튜브(0.78), <br> 금융(0.81)</td>
+            <td>금융(0.75), <br> 쇼핑(0.75)</td>
+            <td>동영상/방송(0.78), <br> 게임(0.80)</td>
+          </tr>
+          <tr>
+            <td>60대</td>
+            <td>동영상/방송(0.75)</td>
+            <td>동영상/방송(0.79)</td>
+            <td>넷플릭스(0.75)</td>
+            <td>없음</td>
+            <td>금융(0.79), <br> 게임(0.75), <br> 유튜브(0.73)</td>
+            <td>쇼핑(0.75)</td>
+            <td>동영상/방송(0.73)</td>
+          </tr>
+        </table>
       </div>
     </div>
     
   <div class="container">
     <button style="width: 400px;" class="btn btn-primary mt-3 mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive">자치구별 평균연령</button>
     <div id="collapseFive" class="collapse">
+      <p><strong>"이 그래프들은 20대부터 70대까지 각 자치구별 평균연령을 보여줍니다."</strong></p>
       <div class="photo-item">
           <img src="{% static 'image/seoul_map.png'%}" style="width: 700px;" alt="자치구별 종합 평균연령">
           <p class="photo-title">자치구별 종합 평균연령</p>
       </div>
       <div class="photo-item">
           <img src="{% static 'image/m_seoul_map.png'%}" style="width: 700px;" alt="자치구별 남자 평균연령">
-          <p class="photo-title">자치구별 남자 평균연령</p>
+          <p class="photo-title">자치구별 남성 평균연령</p>
       </div>
       <div class="photo-item">
           <img src="{% static 'image/f_seoul_map.png'%}" style="width: 700px;" alt="자치구별 여자 평균연령">
-          <p class="photo-title">자치구별 여자 평균연령</p>
-      </div>
+          <p class="photo-title">자치구별 여성 평균연령</p></div>
+        <p><strong>각 자치구별 성별별 평균연령은 다음과 같습니다.</strong></p>
+        <table border="1" width="100%">
+          <tr>
+            <th></th>
+            <th>종합 평균 연령 높은 순위</th>
+            <th>종합 평균 연령 낮은 순위</th>
+            <th>남성 평균 연령 높은 순위</th>
+            <th>남성 평균 연령 낮은 순위</th>
+            <th>여성 평균 연령 높은 순위</th>
+            <th>여성 평균 연령 낮은 순위</th>
+          </tr>
+          <tr>
+            <td>1순위</td>
+            <td>강북구(46.1)</td>
+            <td>관악구(42.5)</td>
+            <td>강북구(45.2)</td>
+            <td>관악구(41.7)</td>
+            <td>강북구(47.0)</td>
+            <td>광진구(43.0)</td>
+          </tr>
+          <tr>
+            <td>2순위</td>
+            <td>동봉구(45.6)</td>
+            <td>광진구(42.6)</td>
+            <td>도봉구(45.0)</td>
+            <td>광진구(42.2)</td>
+            <td>도봉구(46.2)</td>
+            <td>관악구(43.3)</td>
+          </tr>
+          <tr>
+            <td>3순위</td>
+            <td>은평구(45.3)</td>
+            <td>마포구(43.1)</td>
+            <td>은평구(44.6)</td>
+            <td>마포구(42.7), <br>동작구(42.2)</td>
+            <td>은평구(46.0)</td>
+            <td>마포구(43.5)</td>
+          </tr>
+        </table>        
   </div>
     
 </section>

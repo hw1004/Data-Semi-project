@@ -7,7 +7,7 @@ import matplotlib.font_manager as fm
 from django.conf import settings
 
 
-df = pd.read_excel("./services_priority.xlsx")
+df = pd.read_excel("./zvalue_month.xlsx")
 
 def index(request):
     return render(request, 'index.html')
@@ -27,18 +27,29 @@ def service1(request):
             연령대 = int(request.POST.get('연령대'))
         except ValueError:
             return HttpResponse("연령대는 숫자로 입력해주세요.")
-
-        # 입력된 조건에 맞는 데이터를 찾기
+        
         target_data = df[(df['자치구'] == 자치구) & (df['성별'] == 성별) & (df['연령대'] == 연령대)]
+        # 입력된 조건에 맞는 데이터를 찾기
+        if len(target_data) < 9:
+            target_data = df[(df['자치구'] == 자치구) & (df['성별'] == 성별) & (df['연령대'] == 연령대)]
+            while len(target_data) < 9:
+                target_data = target_data.append(target_data)
+                target_data.reset_index(drop=True, inplace=True)
         
         if target_data.empty:  # 데이터가 없는 경우
             return HttpResponse("입력하신 자치구, 성별, 연령대에 해당하는 데이터가 없습니다.")
 
+        
         # 서비스 우선순위 데이터만 선택
-        service_data = target_data.iloc[:, 4:] # '성별' 제외
+        service_data = target_data.reset_index().iloc[:, 6:] # '성별' 제외
+        data = []
+        for i in range(9):
+            data.append(service_data.values[i])
+        
         
         # 순위와 함께 결과를 출력
         services = []
+        
         for i, service in enumerate(service_data.values[0], 1):
             if service == '동영상/방송 서비스':
                 service = '동영상방송 서비스'
@@ -47,9 +58,9 @@ def service1(request):
         first = services[0]
         
         성별 = ('남성' if 성별 == "M" else '여성')
+            
         
-        
-        return render(request, 'service1.html', {'자치구': 자치구, '연령대': 연령대, '성별':성별, 'services': services, 'first': first})
+        return render(request, 'service1.html', {'data': data, 'service_data': service_data, '자치구': 자치구, '연령대': 연령대, '성별':성별, 'services': services, 'first': first})
     else:
         return render(request, 'service1.html')
 
