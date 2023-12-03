@@ -25,11 +25,12 @@
 |팀 세부 주제|통신데이터를 활용한 서비스 패턴 분석 및 광고 추천 시스템 프로젝트|
 |프로젝트 기간|2023.11.14 ~ 2023.12.04 (3주)|
 |팀원 구성|최현민(조장), 정혜원(부조장), 김수연, 김현, 최수정|
-|
+
 
 ## 개발 환경
-|Communication|<img src="https://play-lh.googleusercontent.com/Ob9Ys8yKMeyKzZvl3cB9JNSTui1lJwjSKD60IVYnlvU2DsahysGENJE-txiRIW9_72Vd=w240-h480-rw" height="50">   <img src="https://play-lh.googleusercontent.com/mzJpTCsTW_FuR6YqOPaLHrSEVCSJuXzCljdxnCKhVZMcu6EESZBQTCHxMh8slVtnKqo" height="50">   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Google_Slides_2020_Logo.svg/1200px-Google_Slides_2020_Logo.svg.png" height="50">    <img src="https://play-lh.googleusercontent.com/emmbClh_hm0WpWZqJ0X59B8Pz1mKoB9HVLkYMktxhGE6_-30SdGoa-BmYW73RJ8MGZQ"  height="50">  <img src="https://play-lh.googleusercontent.com/t-juVwXA8lDAk8uQ2L6d6K83jpgQoqmK1icB_l9yvhIAQ2QT_1XbRwg5IpY08906qEw" height="50">|
+|||
 |---|---|
+|Communication|<img src="https://play-lh.googleusercontent.com/Ob9Ys8yKMeyKzZvl3cB9JNSTui1lJwjSKD60IVYnlvU2DsahysGENJE-txiRIW9_72Vd=w240-h480-rw" height="50">   <img src="https://play-lh.googleusercontent.com/mzJpTCsTW_FuR6YqOPaLHrSEVCSJuXzCljdxnCKhVZMcu6EESZBQTCHxMh8slVtnKqo" height="50">   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Google_Slides_2020_Logo.svg/1200px-Google_Slides_2020_Logo.svg.png" height="50">    <img src="https://play-lh.googleusercontent.com/emmbClh_hm0WpWZqJ0X59B8Pz1mKoB9HVLkYMktxhGE6_-30SdGoa-BmYW73RJ8MGZQ"  height="50">  <img src="https://play-lh.googleusercontent.com/t-juVwXA8lDAk8uQ2L6d6K83jpgQoqmK1icB_l9yvhIAQ2QT_1XbRwg5IpY08906qEw" height="50">|
 |Program| <img src="https://play-lh.googleusercontent.com/37EzETO6gZyKmCg2kBIFX1e9gkubxZrVa5fHJ6yOaa7VvEShHjKv2RdtwnZt9Sk258s" height="50">   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Jupyter_logo.svg/1200px-Jupyter_logo.svg.png" height="50">  <img src="https://blog.kakaocdn.net/dn/erEbYY/btrJ3v9wo1K/kc08TL3Rgm67T4txIaZwvk/img.jpg" height="50">|
 |Language|<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/640px-Python-logo-notext.svg.png" height="50">    <img src="https://images.velog.io/images/gyuseok-dev/post/a4e75d99-1871-4c86-ab87-699e2f526916/HTML&CSS.png" height="70">|
 |Packages & Libraries|<img src="https://rphabet.github.io/assets/images/Numpy/logo.png" height="50">   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Pandas_logo.svg/1200px-Pandas_logo.svg.png" height="50"> <img src="https://www.jumpingrivers.com/blog/customising-matplotlib/matplot_title_logo.png" height="50">   <img src="https://repository-images.githubusercontent.com/4704710/fd110d80-63d1-11eb-9ae4-de7c23c9dedc" height="50">    <img src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcFXQFv%2FbtrIRGyVKoT%2FLaS6korks7rH0zmmoQ1Xk0%2Fimg.jpg" height="50">|
