@@ -23,10 +23,7 @@ def service1(request):
         # 사용자 입력 받아오기
         자치구 = request.POST.get('자치구')
         성별 = request.POST.get('성별').upper()
-        try:
-            연령대 = int(request.POST.get('연령대'))
-        except ValueError:
-            return HttpResponse("연령대는 숫자로 입력해주세요.")
+        연령대 = int(request.POST.get('연령대'))
         
         target_data = df[(df['자치구'] == 자치구) & (df['성별'] == 성별) & (df['연령대'] == 연령대)]
         # 입력된 조건에 맞는 데이터를 찾기
@@ -35,9 +32,6 @@ def service1(request):
             while len(target_data) < 9:
                 target_data = target_data.append(target_data)
                 target_data.reset_index(drop=True, inplace=True)
-        
-        if target_data.empty:  # 데이터가 없는 경우
-            return HttpResponse("입력하신 자치구, 성별, 연령대에 해당하는 데이터가 없습니다.")
 
         
         # 서비스 우선순위 데이터만 선택
@@ -80,9 +74,6 @@ def service2(request):
         # 사용자 입력 받아오기
         서비스 = request.POST.get('서비스')
 
-        # 사용자가 입력한 서비스가 service_files에 존재하는지 확인
-        if 서비스 not in service_files:
-            return HttpResponse("입력하신 서비스는 존재하지 않습니다. 다시 입력해주세요.")
 
         # 파일이 존재하면 해당 파일을 불러옵니다.
         filename = os.path.join(settings.BASE_DIR, service_files[서비스])
