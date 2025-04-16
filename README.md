@@ -17,7 +17,7 @@
 > 
 > 또한, 최종적으로 만들어진 서비스를 Django를 이용해 웹사이트로 구현하는 과정까지 진행하였습니다.
 
-<img src="https://github.com/hw1004/Machine-Learning-Semi-project/assets/109745250/7b8949b6-1c2e-4820-84fe-07216d0611a2" width="100%">
+
 
 ## 개발 환경
 |||
